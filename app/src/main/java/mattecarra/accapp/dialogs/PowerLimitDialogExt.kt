@@ -64,7 +64,7 @@ fun MaterialDialog.powerLimitDialog(
 
     fun checkVolt(value: String?)
     {
-        inputVoltageMaxOk = !value.isNullOrEmpty() && value.toInt() in 3700..4300
+        inputVoltageMaxOk = !value.isNullOrEmpty() && value.toInt() in 3700..4500
         hideHintErrVolt(inputVoltageMaxOk)
         setActionButtonEnabled(WhichButton.POSITIVE, inputCurrentMaxOK && inputVoltageMaxOk && inputVoltageControlFileOk)
     }
@@ -184,7 +184,7 @@ fun MaterialDialog.powerLimitDialog(
                 override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
                 {
                     val voltageMaxVal = voltageMaxEditText.text?.toString()?.toIntOrNull()
-                    inputVoltageControlFileOk = voltageMaxVal != null && voltageMaxVal in 3700..4300
+                    inputVoltageControlFileOk = voltageMaxVal != null && voltageMaxVal in 3700..4500
                     setActionButtonEnabled(WhichButton.POSITIVE, inputCurrentMaxOK && inputVoltageMaxOk && inputVoltageControlFileOk)
                 }
             }
